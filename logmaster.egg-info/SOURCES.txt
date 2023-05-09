@@ -1,0 +1,9 @@
+LICENSE
+README.md
+pyproject.toml
+logmaster/__init__.py
+logmaster/logger.py
+logmaster.egg-info/PKG-INFO
+logmaster.egg-info/SOURCES.txt
+logmaster.egg-info/dependency_links.txt
+logmaster.egg-info/top_level.txt

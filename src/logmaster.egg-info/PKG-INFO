@@ -1,20 +1,19 @@
 Metadata-Version: 2.1
 Name: logmaster
-Version: 1.0.3
+Version: 0.1.0
 Summary: A simple logging library for Python
-Home-page: https://github.com/W1L7dev/Logmaster
+Home-page: https://github.com/W1L7dev/logmaster
 Author: W1L7dev
 Author-email: w1l7dev@gmail.com
-Keywords: logmaster,logging,log,logger
-Classifier: Programming Language :: Python :: 3
-Classifier: License :: OSI Approved :: MIT License
-Classifier: Operating System :: OS Independent
-Requires-Python: >=3.7
+License: MIT
+Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
 # Logmaster
-## A simple logging package for Python
+## A simple logging package for
+
+
 ---
 
 ### Installation

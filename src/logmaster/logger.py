@@ -1,5 +1,8 @@
 import datetime
+import json
 from typing import Optional
+
+from .errors import *
 
 class Colors:
     def __init__(self):
@@ -11,11 +14,11 @@ class Colors:
         self.cyan = '\033[96m'
         self.reset = '\033[0m'
 
-
 class Logger(Colors):
-    def __init__(self, filename: Optional[str] = None):
+    def __init__(self, filename: Optional[str] = None) -> None:
         super().__init__()
         self.filename = filename
+        self.levels = ["info", "warning", "error", "critical", "debug", "success", "fail"]
 
     def log(self, level: str, message: str, additional_info: Optional[str] = None):
         if level == "info":
@@ -32,8 +35,8 @@ class Logger(Colors):
             output = f"{self.cyan}[{datetime.datetime.now()}] [SUCCESS] {message}"
         elif level == "fail":
             output = f"{self.red}[{datetime.datetime.now()}] [FAIL] {message}"
-        elif level == "custom":
-            output = f"{self.yellow}[{datetime.datetime.now()}] [CUSTOM] {message}"
+        else:
+            raise InvalidLevel(f"{level} is not a valid level. Please use one of the following: " + x for x in self.levels)
 
         if additional_info:
             output += f" | {additional_info}"

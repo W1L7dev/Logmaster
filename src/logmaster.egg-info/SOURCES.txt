@@ -2,6 +2,9 @@ LICENSE
 README.md
 pyproject.toml
 setup.cfg
+src/logmaster/__init__.py
+src/logmaster/errors.py
+src/logmaster/logger.py
 src/logmaster.egg-info/PKG-INFO
 src/logmaster.egg-info/SOURCES.txt
 src/logmaster.egg-info/dependency_links.txt

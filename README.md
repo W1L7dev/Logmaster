@@ -1,7 +1,5 @@
 # Logmaster
-## A simple logging package for
-
-
+## A simple logging package for Python
 ---
 
 ### Installation

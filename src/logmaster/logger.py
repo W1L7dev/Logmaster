@@ -1,7 +1,8 @@
 import datetime
+import inspect
+import os
 from typing import Optional
 
-import os
 from .errors import *
 
 
@@ -52,7 +53,10 @@ class Logger(Colors):
         if show_datetime:
             output += f"{self.color}[{datetime.datetime.now()}] "
         if show_filename:
-            output += f"{self.color}[{os.path.basename(__file__)}] "
+            frame = inspect.currentframe().f_back
+            file = inspect.getframeinfo(frame).filename
+            file = os.path.basename(file)
+            output += f"{self.color}[{file}] "
         if show_type:
             output += f"{self.color}[{level.upper()}] "
 
@@ -64,4 +68,5 @@ class Logger(Colors):
                 f.write(output + "\n")
         print(output)
 
-Logger().log(level="info", message="This is an info message.", additional_info="additional info")
+    def __repr__(self):
+        return f"<Logger" + (f" filename={self.filename}" if self.filename else "") + ">"
